@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import co.com.netcom.cursoandorid.R;
 import co.com.netcom.cursoandorid.data.Artist;
@@ -21,7 +22,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
 
 
 
-    ArrayList<Artist> artits;
+    List<Artist> artits;
     Context mContext;
 
     public ArtistAdapter(Context mContext) {
@@ -43,7 +44,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
     public void onBindViewHolder(@NonNull ArtistViewHolder artistViewHolder, int i) {
         Artist artist = artits.get(i);
 
-        artistViewHolder.setArtistImage(artist.getImage());
+        artistViewHolder.setArtistImage(artist.getImage().get(2).getText());
         artistViewHolder.setArtistName(artist.getName());
         artistViewHolder.setArtistListener(artist.getListeners());
     }
@@ -53,7 +54,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
         return artits.size();
     }
 
-    public void addAll(ArrayList<Artist> artists){
+    public void addAll(List<Artist> artists){
         this.artits = artists;
     }
 

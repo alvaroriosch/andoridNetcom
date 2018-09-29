@@ -1,9 +1,11 @@
 package co.com.netcom.cursoandorid.data;
 
+import java.util.List;
+
 public class Artist {
 
     String name;
-    String image;
+    List<ArtistImage> image;
     int listeners;
 
     public String getName() {
@@ -14,11 +16,11 @@ public class Artist {
         this.name = name;
     }
 
-    public String getImage() {
+    public List<ArtistImage> getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(List<ArtistImage> image) {
         this.image = image;
     }
 
